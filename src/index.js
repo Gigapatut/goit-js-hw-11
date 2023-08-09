@@ -50,7 +50,9 @@ const handleSearch = (event) => {
         
         markup(collection);
         page += 1;
-          
+
+        
+        
         
         
     });
@@ -69,9 +71,9 @@ function cleaningMarkup() {
 
 const markup = (collection) => {  
     
-    const markup = collection.map((element) => {
+    const markup = collection.map((element) => 
                  
-    return (
+    
         `<div class="photo-card">
             <img src="${element.webformatURL}" alt="${element.tags}" width="360" height="300" loading="lazy" />
             <div class="info">
@@ -88,9 +90,10 @@ const markup = (collection) => {
                     <b>Downloads ${element.downloads}</b>
                 </p>
             </div>
-        </div>`
-    )     
-})
+        </div>`        
+    ).join("");
+        
+
 gallery.insertAdjacentHTML("beforeend", markup);
 };
 
