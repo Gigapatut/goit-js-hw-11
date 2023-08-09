@@ -29,8 +29,8 @@ const handleSearch = (event) => {
         event.preventDefault();
         
         const totalHits = fullData.totalHits;
-        
-        if(page === 1) {
+
+        if(page === 1 & totalHits !== 0) {
             alert(`Hooray! We found ${totalHits} images.`)
         }
                 
