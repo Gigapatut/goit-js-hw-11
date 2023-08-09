@@ -1,0 +1,41 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.search-form {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+  
+	display: flex;
+	justify-content: center;
+  
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: blue;
+
+}
+
+.load-more {
+	background-color: blue;
+	color: hwb(0 99% 1%);
+	border-radius: 10px;
+}
+
+
+.loading {
+	display: none;
+}
+
+.gallery {
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 10px;
+}
