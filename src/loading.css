@@ -26,8 +26,10 @@ h6 {
 	background-color: blue;
 	color: hwb(0 99% 1%);
 	border-radius: 10px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
 }
-
 
 .loading {
 	display: none;
@@ -37,5 +39,5 @@ h6 {
 	justify-content: center;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px 10px;
+	gap: 5px 5px;
 }
