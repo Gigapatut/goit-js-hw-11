@@ -25,10 +25,7 @@ const handleSearch = (event) => {
         
     getCollection(userSearch, page).then(fullData => {
         event.preventDefault();
-        console.log("2222")
-        console.log(fullData)
-        console.log(fullData.total)
-        
+                
         if (fullData.total === 0) {
             alert("Sorry, there are no images matching your search query. Please try again.");
             return;
@@ -42,9 +39,7 @@ const handleSearch = (event) => {
         let limit = fullData.hits.length;
 
         let totalPage = total / limit;
-        console.log("11111111111111")
-        console.log (totalPage)
-
+        
         loadMoreBtn.classList.remove("loading");   
                 
         if (totalPage === Infinity) {
