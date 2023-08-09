@@ -22,16 +22,17 @@ const handleSearch = (event) => {
     if (!userSearch) {
         return ;
     } 
-        
+
     getCollection(userSearch, page)
 
     .then(fullData => {
         event.preventDefault();
-
+        
         const totalHits = fullData.totalHits;
-        console.log(totalHits)
-
-        alert(`Hooray! We found ${totalHits} images.`)
+        
+        if(page === 1) {
+            alert(`Hooray! We found ${totalHits} images.`)
+        }
                 
         if (fullData.total === 0) {
             alert("Sorry, there are no images matching your search query. Please try again.");
@@ -68,7 +69,8 @@ searchForm.addEventListener('submit', handleSearch);
 
 function cleaningMarkup() {
     loadMoreBtn.classList.add("loading");
-    return gallery.innerHTML = "";   
+    
+    return gallery.innerHTML = "", page = 1;   
 }
 
 // --------------РОЗМІТКА--------------------------
