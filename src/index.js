@@ -27,12 +27,16 @@ const handleSearch = (event) => {
 
     .then(fullData => {
         event.preventDefault();
+
+        const totalHits = fullData.totalHits;
+        console.log(totalHits)
+
+        alert(`Hooray! We found ${totalHits} images.`)
                 
         if (fullData.total === 0) {
             alert("Sorry, there are no images matching your search query. Please try again.");
             return;
         }
-
         
         const collection = fullData.hits;
 
