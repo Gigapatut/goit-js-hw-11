@@ -23,7 +23,9 @@ const handleSearch = (event) => {
         return ;
     } 
         
-    getCollection(userSearch, page).then(fullData => {
+    getCollection(userSearch, page)
+
+    .then(fullData => {
         event.preventDefault();
                 
         if (fullData.total === 0) {
@@ -49,13 +51,11 @@ const handleSearch = (event) => {
         }        
         
         markup(collection);
-        page += 1;
-
-        
-        
-        
-        
-    });
+        page += 1;         
+    })
+    .catch(error => {
+        alert("error");
+    }); 
     
 };
 
@@ -91,17 +91,13 @@ const markup = (collection) => {
                 </p>
             </div>
         </div>`        
-    ).join("");
-        
+    ).join("");       
 
 gallery.insertAdjacentHTML("beforeend", markup);
 };
 
 // -------------ЗАВАНТАЖИТИ ЩЕ--------------------
 
-function loadMore(event) {
-    handleSearch(event);
-}
-loadMoreBtn.addEventListener('click', loadMore);
+loadMoreBtn.addEventListener('click', handleSearch);
 
 

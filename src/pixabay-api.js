@@ -21,8 +21,8 @@ export const getCollection = async (userSearch, page) => {
         
         return fullData;   
     }
-    catch (error) {
-        alert("error");
-    }    
+    // catch (error) {
+    //     alert("error");
+    // }    
 };
 
